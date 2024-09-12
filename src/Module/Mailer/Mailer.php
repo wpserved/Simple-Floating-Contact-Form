@@ -176,6 +176,9 @@ if(!class_exists('Mailer')) {
       }
 
       $data['page'] = $this->data['page'];
+
+      $data = apply_filters('sfcf_mailer_message_data', $data);
+
       $tokens = array(
         '[sfcf_recipent]' => $this->emailRecipent,
         '[sfcf_email]' => $data['email'],
